@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "has introduit els numeros "
-SUMA=$((${1}/${2}))
-echo "${1}/${2}=${SUMA}"
+DIVISIO=$(echo "scale=2; ${1}/${2}" | bc)
+echo "${1}/${2}=${DIVISIO}"
