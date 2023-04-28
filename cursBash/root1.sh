@@ -11,4 +11,6 @@ then
     exit 1
 fi
 
-read -p "Introdueix el nom d'usuari: "
+read -p "Introdueix el nom d'usuari: " USER_NAME
+
+echo "creant l'usuari ${USER_NAME}"
