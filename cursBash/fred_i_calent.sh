@@ -2,28 +2,24 @@
 
 #Genera un nombre aleatori entre 1 i 10:
 adivina=$(( ( RANDOM % 10 )  + 1 ))
-echo "adivina: ${adivina}"
+vides=3
 
-########################################################
-# Escriu el teu codi aqui
-read -p "indica el teu numero: " A
+ while [[ ${vides} -ne 0 ]]
+do
+    read -p "Introdueix un número: " Introduit
+    if [[ ${Introduit} -eq ${adivina} ]]
+    then
+        echo "Eureka!"
+        exit 0
+    fi
 
-if [[ ${A} -eq ${adivina} ]]
-then
-    echo "Eureka!"
-    exit 0
-fi
-
-if [[ ${A} < ${adivina} ]]
-then
-    echo "Fred!"
-    exit 1
-fi
-
-if [[ ${A} > ${adivina} ]]
-then
-    echo "Calent!"
-    exit 1
-fi
-
-echo "El nombre que havies d'adivinar era: ${adivina}"
+    if [[ ${Introduit} -lt ${adivina} ]]
+    then
+        echo "Fred!"
+    else
+        echo "Calent!"
+    fi
+    vides=$(( vides-1 ))
+    echo "vides : ${vides}"    
+done
+echo "El número era ${adivina}"
