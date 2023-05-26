@@ -32,4 +32,8 @@ do
     #Entrerem dins aquest bloc, tantes vegades com paràmetres posem al script
     PASSWORD=$(date +%s%N | sha256sum | head -c10)
     echo "${USER_NAME}:${PASSWORD}"
-done
+
+    #CREAR L'USUARI AMB AQUEST PASSWORD,
+    #FER QUE L'USARI HAGI DE CANVIAR EL PASSWORD AL PRIMER LOGIN
+    #I QUE ES CREI EL HOME PER AQUEST USUARI
+    done
