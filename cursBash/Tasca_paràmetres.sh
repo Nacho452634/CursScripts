@@ -33,7 +33,28 @@ do
     PASSWORD=$(date +%s%N | sha256sum | head -c10)
     echo "${USER_NAME}:${PASSWORD}"
 
-    #CREAR L'USUARI AMB AQUEST PASSWORD,
+    #CREAR L'USUARI amb el HOME
+    read -p "Introdueix el nom complet: " COMMENTS
+    read -p "Introdueix el nom d'usuari: " USER_NAME
+    read -p "Introdueix el password: " PASSWORD
+
+    useradd -m -c "${COMMENTS}" ${USER_NAME} &> /dev/null
+    if [[ ${?} -ne 0 ]]
+    then
+        echo "Errada, creant l'usuari"
+        exit 1
+    fi
+    
+    #CANVIAM PASSWORD,
+    echo "${USER_NAME}:${PASSWORD}" | chpasswd
+
+    if [[ ${?} -ne 0 ]]  
+    then
+        echo "Errada, canviant password"
+        exit 1
+    fi
+
     #FER QUE L'USARI HAGI DE CANVIAR EL PASSWORD AL PRIMER LOGIN
-    #I QUE ES CREI EL HOME PER AQUEST USUARI
+    passwd -e ${USER_NAME}
+
     done
