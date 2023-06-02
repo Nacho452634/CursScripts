@@ -39,8 +39,11 @@ do
     read -p "Introdueix el password: " PASSWORD
 
     useradd -m -c "${COMMENTS}" ${USER_NAME} &> /dev/null
+   
+   #Comprovam si ha hagut una errada
     if [[ ${?} -ne 0 ]]
     then
+        #SI ENTRAM AQUI ES PQ HI HA UNA ERRADA
         echo "Errada, creant l'usuari"
         exit 1
     fi
@@ -50,6 +53,7 @@ do
 
     if [[ ${?} -ne 0 ]]  
     then
+        #SI ENTRAM AQUI ES PQ HI HA UNA ERRADA
         echo "Errada, canviant password"
         exit 1
     fi
