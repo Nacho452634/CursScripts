@@ -61,4 +61,4 @@ do
     #FER QUE L'USARI HAGI DE CANVIAR EL PASSWORD AL PRIMER LOGIN
     passwd -e ${USER_NAME}
 
-    done
+done
