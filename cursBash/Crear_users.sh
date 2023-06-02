@@ -1,7 +1,7 @@
 #!/bin/bash
 function usage(){
     #Indicam les instruccions del script
-    echo "INSTRUCCIONS ./Tasca_paràmetres.sh USER_NAME [USER_NAME ... ]"
+    echo "INSTRUCCIONS ./Crear_users.sh USER_NAME [USER_NAME ... ]"
     exit 1
 }
 
