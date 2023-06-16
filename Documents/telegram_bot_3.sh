@@ -6,5 +6,4 @@ HOST=$(hostname)
 MENSAJE="S'ha reiniciat ${HOST} a les ${DATA} ip: ${IP}"
 
 echo $MENSAJE
-/home/nacho/Documents/telegram_bot_2.sh "${MENSAJE}"
-
+/home/nacho/CursScripts/Documents/telegram_bot_2.sh "${MENSAJE}"

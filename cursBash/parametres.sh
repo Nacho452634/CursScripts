@@ -16,4 +16,4 @@ echo "el parametre 1 es ${1}"
 echo "el parametre 2 és ${2}"
 
 parametre_sostingut=${#}
-echo "el parametre sostingut ${parametre_sostingut} indica el número de paràmetres
+echo "el parametre sostingut ${parametre_sostingut} indica el número de paràmetres"
